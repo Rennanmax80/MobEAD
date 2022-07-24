@@ -61,12 +61,6 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: Docker@2
-  inputs:
-    containerRegistry: 'DockerRennanmax80'
-    repository: 'Rennanmax80/unyleya'
-    command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
 
 #- task: SonarQubeAnalyze@4
 
@@ -79,4 +73,12 @@ steps:
        artifactName: # 'drop'
 
  
+- task: Docker@2
+  inputs:
+    containerRegistry: 'DockerRennanmax80'
+    repository: 'Rennanmax80/unyleya'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
+ 
+
 
