@@ -72,6 +72,9 @@ steps:
   inputs:
        artifactName: # 'drop'
 
+- task: DockerInstaller@0
+  inputs:
+    dockerVersion: '17.09.0-ce'
  
 - task: Docker@2
   inputs:
@@ -80,5 +83,4 @@ steps:
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
  
-
 
